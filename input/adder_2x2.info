@@ -1,0 +1,6 @@
+input_lit: 4
+c1_lit: 7
+c2_lit: 7
+miter_lit: 5
+c1_cls: 24
+c1_sat: 1 2 3 4 -5 6 7 -8 9 -10 11

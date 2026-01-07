@@ -1,0 +1,261 @@
+index:  0  clause:  -8 -7 -9  support:    pivot:   end:  0
+index:  1  clause:  8 7  support:    pivot:   end:  0
+index:  2  clause:  9 7  support:    pivot:   end:  0
+index:  3  clause:  10 11 -9  support:    pivot:   end:  0
+index:  4  clause:  9 -10  support:    pivot:   end:  0
+index:  5  clause:  9 -11  support:    pivot:   end:  0
+index:  6  clause:  -8 -4 -2  support:    pivot:   end:  0
+index:  7  clause:  8 2  support:    pivot:   end:  0
+index:  8  clause:  8 4  support:    pivot:   end:  0
+index:  9  clause:  -6 -11 -10  support:    pivot:   end:  0
+index:  10  clause:  11 -6 10  support:    pivot:   end:  0
+index:  11  clause:  10 -11 6  support:    pivot:   end:  0
+index:  12  clause:  11 6 -10  support:    pivot:   end:  0
+index:  13  clause:  11 -4 -2  support:    pivot:   end:  0
+index:  14  clause:  2 11 4  support:    pivot:   end:  0
+index:  15  clause:  2 -4 -11  support:    pivot:   end:  0
+index:  16  clause:  4 -11 -2  support:    pivot:   end:  0
+index:  17  clause:  -3 -1 -10  support:    pivot:   end:  0
+index:  18  clause:  10 3  support:    pivot:   end:  0
+index:  19  clause:  1 10  support:    pivot:   end:  0
+index:  20  clause:  -5 -3 -1  support:    pivot:   end:  0
+index:  21  clause:  1 3 -5  support:    pivot:   end:  0
+index:  22  clause:  3 5 -1  support:    pivot:   end:  0
+index:  23  clause:  1 -3 5  support:    pivot:   end:  0
+index:  24  clause:  -16 -15 -14  support:    pivot:   end:  0
+index:  25  clause:  14 15  support:    pivot:   end:  0
+index:  26  clause:  16 14  support:    pivot:   end:  0
+index:  27  clause:  -16 -4 -2  support:    pivot:   end:  0
+index:  28  clause:  16 4  support:    pivot:   end:  0
+index:  29  clause:  16 2  support:    pivot:   end:  0
+index:  30  clause:  17 18 -15  support:    pivot:   end:  0
+index:  31  clause:  15 -17  support:    pivot:   end:  0
+index:  32  clause:  -18 15  support:    pivot:   end:  0
+index:  33  clause:  -13 -18 -17  support:    pivot:   end:  0
+index:  34  clause:  17 18 -13  support:    pivot:   end:  0
+index:  35  clause:  17 13 -18  support:    pivot:   end:  0
+index:  36  clause:  18 13 -17  support:    pivot:   end:  0
+index:  37  clause:  18 -4 -2  support:    pivot:   end:  0
+index:  38  clause:  18 2 4  support:    pivot:   end:  0
+index:  39  clause:  2 -4 -18  support:    pivot:   end:  0
+index:  40  clause:  4 -18 -2  support:    pivot:   end:  0
+index:  41  clause:  -3 -1 -17  support:    pivot:   end:  0
+index:  42  clause:  17 3  support:    pivot:   end:  0
+index:  43  clause:  1 17  support:    pivot:   end:  0
+index:  44  clause:  -12 -3 -1  support:    pivot:   end:  0
+index:  45  clause:  1 3 -12  support:    pivot:   end:  0
+index:  46  clause:  3 12 -1  support:    pivot:   end:  0
+index:  47  clause:  1 12 -3  support:    pivot:   end:  0
+index:  48  clause:  -5 -12 -19  support:    pivot:   end:  0
+index:  49  clause:  5 12 -19  support:    pivot:   end:  0
+index:  50  clause:  -6 -13 -20  support:    pivot:   end:  0
+index:  51  clause:  -20 13 6  support:    pivot:   end:  0
+index:  52  clause:  -7 -14 -21  support:    pivot:   end:  0
+index:  53  clause:  -21 14 7  support:    pivot:   end:  0
+index:  54  clause:  -22 19 20  support:    pivot:   end:  0
+index:  55  clause:  -23 21 22  support:    pivot:   end:  0
+index:  56  clause:  23  support:    pivot:   end:  0
+index:  57  clause:  21 22  support:  56 55  pivot:  23 end:  0
+index:  58  clause:  19 20 21  support:  57 54  pivot:  22 end:  0
+index:  59  clause:  -14 19 20 -7  support:  58 52  pivot:  21 end:  0
+index:  60  clause:  -14 19 -13 -7 -6  support:  59 50  pivot:  20 end:  0
+index:  61  clause:  17 -14 19 -7 -6 -18  support:  60 35  pivot:  -13 end:  0
+index:  62  clause:  17 -14 19 -7 -6 -4 -2  support:  61 37  pivot:  -18 end:  0
+index:  63  clause:  16 17 19 -7 -6 -4 -2  support:  62 26  pivot:  -14 end:  0
+index:  64  clause:  17 19 -7 -6 -4 -2  support:  63 27  pivot:  16 end:  0
+index:  65  clause:  10 17 19 -11 -7 -4 -2  support:  64 11  pivot:  -6 end:  0
+index:  66  clause:  10 17 19 -7 -4 -2  support:  65 13  pivot:  -11 end:  0
+index:  67  clause:  17 19 8 10 -4 -2  support:  66 1  pivot:  -7 end:  0
+index:  68  clause:  10 17 19 -4 -2  support:  67 6  pivot:  8 end:  0
+index:  69  clause:  21 22  support:  56 55  pivot:  23 end:  0
+index:  70  clause:  19 20 21  support:  69 54  pivot:  22 end:  0
+index:  71  clause:  -14 19 20 -7  support:  70 52  pivot:  21 end:  0
+index:  72  clause:  -14 19 6 -7 13  support:  71 51  pivot:  20 end:  0
+index:  73  clause:  17 -14 19 18 6 -7  support:  72 34  pivot:  13 end:  0
+index:  74  clause:  17 19 18 6 -7 15  support:  73 25  pivot:  -14 end:  0
+index:  75  clause:  6 17 18 19 -7  support:  74 30  pivot:  15 end:  0
+index:  76  clause:  17 19 4 6 -2 -7  support:  75 40  pivot:  18 end:  0
+index:  77  clause:  4 10 11 17 19 -7 -2  support:  76 10  pivot:  6 end:  0
+index:  78  clause:  4 9 10 11 17 19 -2  support:  77 2  pivot:  -7 end:  0
+index:  79  clause:  4 10 11 17 19 -2  support:  78 3  pivot:  9 end:  0
+index:  80  clause:  4 10 17 19 -2  support:  79 16  pivot:  11 end:  0
+index:  81  clause:  10 17 19 -2  support:  80 68  pivot:  4 end:  0
+index:  82  clause:  17 5 10 12 -2  support:  81 49  pivot:  19 end:  0
+index:  83  clause:  17 5 -1 10 -3 -2  support:  82 44  pivot:  12 end:  0
+index:  84  clause:  5 10 -1 -3 -2  support:  83 41  pivot:  17 end:  0
+index:  85  clause:  -2 10 -3 -1  support:  84 20  pivot:  5 end:  0
+index:  86  clause:  -1 -3 -2  support:  85 17  pivot:  10 end:  0
+index:  87  clause:  21 22  support:  56 55  pivot:  23 end:  0
+index:  88  clause:  19 20 21  support:  87 54  pivot:  22 end:  0
+index:  89  clause:  19 20 7 14  support:  88 53  pivot:  21 end:  0
+index:  90  clause:  19 -13 7 -6 14  support:  89 50  pivot:  20 end:  0
+index:  91  clause:  18 19 7 -6 14 -17  support:  90 36  pivot:  -13 end:  0
+index:  92  clause:  4 7 14 -17 19 -6 -2  support:  91 40  pivot:  18 end:  0
+index:  93  clause:  4 7 -17 -16 -15 19 -6 -2  support:  92 24  pivot:  14 end:  0
+index:  94  clause:  4 7 -17 -16 19 -6 -2  support:  93 31  pivot:  -15 end:  0
+index:  95  clause:  4 7 -17 19 -6 -2  support:  94 28  pivot:  -16 end:  0
+index:  96  clause:  4 7 11 -17 19 -10 -2  support:  95 12  pivot:  -6 end:  0
+index:  97  clause:  4 7 -17 19 -10 -2  support:  96 16  pivot:  11 end:  0
+index:  98  clause:  4 -17 19 -10 -9 -8 -2  support:  97 0  pivot:  7 end:  0
+index:  99  clause:  4 -17 19 -10 -9 -2  support:  98 8  pivot:  -8 end:  0
+index:  100  clause:  19 4 -10 -2 -17  support:  99 4  pivot:  -9 end:  0
+index:  101  clause:  21 22  support:  56 55  pivot:  23 end:  0
+index:  102  clause:  19 20 21  support:  101 54  pivot:  22 end:  0
+index:  103  clause:  -14 19 20 -7  support:  102 52  pivot:  21 end:  0
+index:  104  clause:  -14 19 6 -7 13  support:  103 51  pivot:  20 end:  0
+index:  105  clause:  -14 19 6 -7 -18 -17  support:  104 33  pivot:  13 end:  0
+index:  106  clause:  6 -17 -14 19 -7 -4 -2  support:  105 37  pivot:  -18 end:  0
+index:  107  clause:  6 -17 16 19 -7 -4 -2  support:  106 26  pivot:  -14 end:  0
+index:  108  clause:  6 -17 19 -7 -4 -2  support:  107 27  pivot:  16 end:  0
+index:  109  clause:  -17 19 -11 -10 -7 -4 -2  support:  108 9  pivot:  6 end:  0
+index:  110  clause:  -17 19 -10 -7 -4 -2  support:  109 13  pivot:  -11 end:  0
+index:  111  clause:  19 -10 8 -4 -2 -17  support:  110 1  pivot:  -7 end:  0
+index:  112  clause:  -17 19 -10 -4 -2  support:  111 6  pivot:  8 end:  0
+index:  113  clause:  -17 19 -10 -2  support:  112 100  pivot:  -4 end:  0
+index:  114  clause:  -12 -10 -5 -2 -17  support:  113 48  pivot:  19 end:  0
+index:  115  clause:  3 -10 -1 -5 -2 -17  support:  114 46  pivot:  -12 end:  0
+index:  116  clause:  3 -10 -2 -5 -1  support:  115 42  pivot:  -17 end:  0
+index:  117  clause:  3 -10 -1 -2  support:  116 22  pivot:  -5 end:  0
+index:  118  clause:  3 -1 -2  support:  117 18  pivot:  -10 end:  0
+index:  119  clause:  -2 -1  support:  118 86  pivot:  3 end:  0
+index:  120  clause:  21 22  support:  56 55  pivot:  23 end:  0
+index:  121  clause:  19 20 21  support:  120 54  pivot:  22 end:  0
+index:  122  clause:  -14 19 20 -7  support:  121 52  pivot:  21 end:  0
+index:  123  clause:  -14 19 6 -7 13  support:  122 51  pivot:  20 end:  0
+index:  124  clause:  -14 5 6 -7 12 13  support:  123 49  pivot:  19 end:  0
+index:  125  clause:  5 6 13 -14 -7 -3 -1  support:  124 44  pivot:  12 end:  0
+index:  126  clause:  5 6 17 -14 18 -7 -3 -1  support:  125 34  pivot:  13 end:  0
+index:  127  clause:  5 6 15 17 18 -7 -3 -1  support:  126 25  pivot:  -14 end:  0
+index:  128  clause:  5 6 17 18 -7 -3 -1  support:  127 30  pivot:  15 end:  0
+index:  129  clause:  5 6 18 -7 -3 -1  support:  128 41  pivot:  17 end:  0
+index:  130  clause:  6 18 -7 -3 -1  support:  129 20  pivot:  5 end:  0
+index:  131  clause:  18 6 -7 10 -1  support:  130 18  pivot:  -3 end:  0
+index:  132  clause:  18 6 9 10 -1  support:  131 2  pivot:  -7 end:  0
+index:  133  clause:  18 6 10 11 -1  support:  132 3  pivot:  9 end:  0
+index:  134  clause:  18 6 11 -1  support:  133 12  pivot:  10 end:  0
+index:  135  clause:  21 22  support:  56 55  pivot:  23 end:  0
+index:  136  clause:  19 20 21  support:  135 54  pivot:  22 end:  0
+index:  137  clause:  19 20 7 14  support:  136 53  pivot:  21 end:  0
+index:  138  clause:  19 -13 7 -6 14  support:  137 50  pivot:  20 end:  0
+index:  139  clause:  -13 -12 7 -6 -5 14  support:  138 48  pivot:  19 end:  0
+index:  140  clause:  3 7 14 -13 -6 -5 -1  support:  139 46  pivot:  -12 end:  0
+index:  141  clause:  3 7 14 -17 18 -6 -5 -1  support:  140 36  pivot:  -13 end:  0
+index:  142  clause:  3 7 -17 -16 -15 18 -6 -5 -1  support:  141 24  pivot:  14 end:  0
+index:  143  clause:  3 7 -17 -16 18 -6 -5 -1  support:  142 31  pivot:  -15 end:  0
+index:  144  clause:  3 7 -16 18 -6 -5 -1  support:  143 42  pivot:  -17 end:  0
+index:  145  clause:  3 7 -16 18 -6 -1  support:  144 22  pivot:  -5 end:  0
+index:  146  clause:  7 -16 18 -10 -6 -1  support:  145 17  pivot:  3 end:  0
+index:  147  clause:  -16 18 -10 -9 -8 -6 -1  support:  146 0  pivot:  7 end:  0
+index:  148  clause:  -16 18 -10 -8 -6 -1  support:  147 4  pivot:  -9 end:  0
+index:  149  clause:  11 -16 18 -8 -6 -1  support:  148 10  pivot:  -10 end:  0
+index:  150  clause:  11 -16 18 -8 -1  support:  149 134  pivot:  -6 end:  0
+index:  151  clause:  -16 2 -8 11 -4 -1  support:  150 39  pivot:  18 end:  0
+index:  152  clause:  2 -8 11 -4 -1  support:  151 29  pivot:  -16 end:  0
+index:  153  clause:  2 -8 -4 -1  support:  152 15  pivot:  11 end:  0
+index:  154  clause:  2 -4 -1  support:  153 7  pivot:  -8 end:  0
+index:  155  clause:  -4 -1  support:  154 119  pivot:  2 end:  0
+index:  156  clause:  21 22  support:  56 55  pivot:  23 end:  0
+index:  157  clause:  19 20 21  support:  156 54  pivot:  22 end:  0
+index:  158  clause:  19 20 7 14  support:  157 53  pivot:  21 end:  0
+index:  159  clause:  19 -13 7 -6 14  support:  158 50  pivot:  20 end:  0
+index:  160  clause:  -13 5 7 -6 12 14  support:  159 49  pivot:  19 end:  0
+index:  161  clause:  5 7 14 -13 -6 -3 -1  support:  160 44  pivot:  12 end:  0
+index:  162  clause:  5 7 14 -18 17 -6 -3 -1  support:  161 35  pivot:  -13 end:  0
+index:  163  clause:  5 7 14 -18 -6 -3 -1  support:  162 41  pivot:  17 end:  0
+index:  164  clause:  5 7 -18 -16 -15 -6 -3 -1  support:  163 24  pivot:  14 end:  0
+index:  165  clause:  5 7 -18 -16 -6 -3 -1  support:  164 32  pivot:  -15 end:  0
+index:  166  clause:  2 4 5 7 -16 -6 -3 -1  support:  165 38  pivot:  -18 end:  0
+index:  167  clause:  2 4 5 7 -6 -3 -1  support:  166 29  pivot:  -16 end:  0
+index:  168  clause:  2 4 7 -6 -3 -1  support:  167 20  pivot:  5 end:  0
+index:  169  clause:  2 10 4 7 -6 -1  support:  168 18  pivot:  -3 end:  0
+index:  170  clause:  2 4 7 -11 -6 -1  support:  169 9  pivot:  10 end:  0
+index:  171  clause:  2 4 -11 -9 -8 -6 -1  support:  170 0  pivot:  7 end:  0
+index:  172  clause:  2 4 -11 -8 -6 -1  support:  171 5  pivot:  -9 end:  0
+index:  173  clause:  2 4 -8 -6 -1  support:  172 14  pivot:  -11 end:  0
+index:  174  clause:  2 4 -6 -1  support:  173 7  pivot:  -8 end:  0
+index:  175  clause:  2 -6 -1  support:  174 155  pivot:  4 end:  0
+index:  176  clause:  -6 -1  support:  175 119  pivot:  2 end:  0
+index:  177  clause:  21 22  support:  56 55  pivot:  23 end:  0
+index:  178  clause:  19 20 21  support:  177 54  pivot:  22 end:  0
+index:  179  clause:  19 20 7 14  support:  178 53  pivot:  21 end:  0
+index:  180  clause:  19 6 7 13 14  support:  179 51  pivot:  20 end:  0
+index:  181  clause:  -12 6 7 -5 13 14  support:  180 48  pivot:  19 end:  0
+index:  182  clause:  3 6 7 13 14 -5 -1  support:  181 46  pivot:  -12 end:  0
+index:  183  clause:  3 6 7 14 -18 -17 -5 -1  support:  182 33  pivot:  13 end:  0
+index:  184  clause:  3 6 7 14 -18 -5 -1  support:  183 42  pivot:  -17 end:  0
+index:  185  clause:  3 6 7 -18 -16 -15 -5 -1  support:  184 24  pivot:  14 end:  0
+index:  186  clause:  3 6 7 -18 -16 -5 -1  support:  185 32  pivot:  -15 end:  0
+index:  187  clause:  2 3 4 6 7 -16 -5 -1  support:  186 38  pivot:  -18 end:  0
+index:  188  clause:  2 3 4 6 7 -5 -1  support:  187 29  pivot:  -16 end:  0
+index:  189  clause:  2 3 4 6 7 -1  support:  188 22  pivot:  -5 end:  0
+index:  190  clause:  2 4 6 7 -10 -1  support:  189 17  pivot:  3 end:  0
+index:  191  clause:  2 4 6 7 -11 -1  support:  190 11  pivot:  -10 end:  0
+index:  192  clause:  2 4 6 -11 -9 -8 -1  support:  191 0  pivot:  7 end:  0
+index:  193  clause:  2 4 6 -11 -8 -1  support:  192 5  pivot:  -9 end:  0
+index:  194  clause:  2 4 6 -8 -1  support:  193 14  pivot:  -11 end:  0
+index:  195  clause:  2 4 6 -1  support:  194 7  pivot:  -8 end:  0
+index:  196  clause:  2 4 -1  support:  195 176  pivot:  6 end:  0
+index:  197  clause:  2 -1  support:  196 155  pivot:  4 end:  0
+index:  198  clause:  -1  support:  197 119  pivot:  2 end:  0
+index:  199  clause:  17  support:  43 198  pivot:  1 end:  0
+index:  200  clause:  10  support:  19 198  pivot:  1 end:  0
+index:  201  clause:  15  support:  31 199  pivot:  -17 end:  0
+index:  202  clause:  9  support:  200 4  pivot:  10 end:  0
+index:  203  clause:  16 -8 -4  support:  29 6  pivot:  2 end:  0
+index:  204  clause:  16 -8  support:  203 28  pivot:  -4 end:  0
+index:  205  clause:  -15 -14 -8  support:  204 24  pivot:  16 end:  0
+index:  206  clause:  -15 7 -8 -21  support:  205 53  pivot:  -14 end:  0
+index:  207  clause:  7 -8 -21  support:  206 201  pivot:  -15 end:  0
+index:  208  clause:  7 -21  support:  207 1  pivot:  -8 end:  0
+index:  209  clause:  16 -7 -21  support:  52 26  pivot:  -14 end:  0
+index:  210  clause:  -7 -21 -4 -2  support:  209 27  pivot:  16 end:  0
+index:  211  clause:  8 -7 -21 -2  support:  210 8  pivot:  -4 end:  0
+index:  212  clause:  8 -7 -21  support:  211 7  pivot:  -2 end:  0
+index:  213  clause:  -9 -7 -21  support:  212 0  pivot:  8 end:  0
+index:  214  clause:  -9 -21  support:  213 208  pivot:  -7 end:  0
+index:  215  clause:  -21  support:  214 202  pivot:  -9 end:  0
+index:  216  clause:  21 22  support:  56 55  pivot:  23 end:  0
+index:  217  clause:  22  support:  216 215  pivot:  21 end:  0
+index:  218  clause:  1 3 5 -19  support:  49 45  pivot:  12 end:  0
+index:  219  clause:  1 3 -19  support:  218 21  pivot:  5 end:  0
+index:  220  clause:  3 -19  support:  219 198  pivot:  1 end:  0
+index:  221  clause:  1 -3 -5 -19  support:  48 47  pivot:  -12 end:  0
+index:  222  clause:  1 -3 -19  support:  221 23  pivot:  -5 end:  0
+index:  223  clause:  1 -19  support:  222 220  pivot:  -3 end:  0
+index:  224  clause:  -19  support:  223 198  pivot:  1 end:  0
+index:  225  clause:  -22 20  support:  54 224  pivot:  19 end:  0
+index:  226  clause:  20  support:  225 217  pivot:  -22 end:  0
+index:  227  clause:  6 -20 -18 -17  support:  51 33  pivot:  13 end:  0
+index:  228  clause:  6 -2 -20 -4 -17  support:  227 37  pivot:  -18 end:  0
+index:  229  clause:  6 -4 -2 -17  support:  228 226  pivot:  -20 end:  0
+index:  230  clause:  -11 -10 -4 -2 -17  support:  229 9  pivot:  6 end:  0
+index:  231  clause:  -10 -4 -2 -17  support:  230 13  pivot:  -11 end:  0
+index:  232  clause:  -4 -2 -17  support:  231 200  pivot:  -10 end:  0
+index:  233  clause:  8 -2 -17  support:  232 8  pivot:  -4 end:  0
+index:  234  clause:  8 -2  support:  233 199  pivot:  -17 end:  0
+index:  235  clause:  8  support:  234 7  pivot:  -2 end:  0
+index:  236  clause:  -4 -2  support:  235 6  pivot:  8 end:  0
+index:  237  clause:  19 -10 -2 -17  support:  236 100  pivot:  -4 end:  0
+index:  238  clause:  -10 -2 -17  support:  237 224  pivot:  19 end:  0
+index:  239  clause:  -17 -2  support:  238 200  pivot:  -10 end:  0
+index:  240  clause:  -2  support:  239 199  pivot:  -17 end:  0
+index:  241  clause:  6 -20 -18 -17  support:  51 33  pivot:  13 end:  0
+index:  242  clause:  2 4 6 -20 -17  support:  241 38  pivot:  -18 end:  0
+index:  243  clause:  2 4 -11 -10 -20 -17  support:  242 9  pivot:  6 end:  0
+index:  244  clause:  2 4 -20 -17 -10  support:  243 14  pivot:  -11 end:  0
+index:  245  clause:  4 -10 -20 -17  support:  244 240  pivot:  2 end:  0
+index:  246  clause:  4 -10 -17  support:  245 226  pivot:  -20 end:  0
+index:  247  clause:  4 -17  support:  246 200  pivot:  -10 end:  0
+index:  248  clause:  4  support:  247 199  pivot:  -17 end:  0
+index:  249  clause:  2 -18  support:  39 248  pivot:  -4 end:  0
+index:  250  clause:  -18  support:  249 240  pivot:  2 end:  0
+index:  251  clause:  -11 2  support:  248 15  pivot:  4 end:  0
+index:  252  clause:  -11  support:  251 240  pivot:  2 end:  0
+index:  253  clause:  13 -17  support:  36 250  pivot:  18 end:  0
+index:  254  clause:  13  support:  253 199  pivot:  -17 end:  0
+index:  255  clause:  6 -10  support:  252 12  pivot:  -11 end:  0
+index:  256  clause:  6  support:  255 200  pivot:  -10 end:  0
+index:  257  clause:  -13 -20  support:  50 256  pivot:  -6 end:  0
+index:  258  clause:  -20  support:  257 254  pivot:  -13 end:  0
+index:  259  clause:    support:  258 226  pivot:  -20 end:  0
+DEGREE: 13

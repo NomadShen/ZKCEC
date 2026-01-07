@@ -1,0 +1,34 @@
+#pragma once
+#ifndef ZKUNSAT_NEW_COMMONS_H
+#define ZKUNSAT_NEW_COMMONS_H
+#include "emp-zk/emp-zk.h"
+#include "emp-zk/extensions/ram-zk/ostriple.h"
+#include <NTL/GF2EX.h>
+#include <NTL/GF2E.h>
+#include <NTL/GF2EXFactoring.h>
+#include "emp-zk/emp-vole-f2k/base_svole.h"
+
+
+extern int DEGREE;
+extern SVoleF2k<BoolIO<NetIO>> *svole;
+extern F2kOSTriple<BoolIO<NetIO>>* ostriple;
+extern BoolIO<NetIO>* io;
+extern uint64_t constant;
+extern block *data;
+extern block *mac;
+extern uint64_t data_mac_pointer;
+
+#define ALICE 1
+#define BOB 2
+
+#define VAL_SZ 64
+#define MSB_MASK  (1UL << (VAL_SZ - 1))
+#define SMSB_MASK (1UL << (VAL_SZ - 2))
+#define CONSTANT SMSB_MASK
+
+#define PADDING
+//#define UNFOLD
+
+extern int cnt_svole;
+extern int cnt_eval;
+#endif //ZKUNSAT_NEW_COMMONS_H
