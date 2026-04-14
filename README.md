@@ -8,13 +8,12 @@
 - Emp-ot
 - OpenSSL
 - NTL
+- pkg-config
 - LibSodium
 - gmp
 
 ### Compile 
 First configure CMakeLists.txt to set the path to NTL lib.
-
-If you want no optimization, comment out `#define UNFOLD` in `commons.h`. To run the optimized experiment, leave it uncommented.
 
 Then run:
 ```
@@ -30,3 +29,7 @@ First configure the $DESIGN in run_experiments.sh.
 
 Then run:
 ```bash run_experiments.sh```
+
++ To run with optimization, add `-o`.
++ To run with alternative design, add `-d $(design_name)`.
++ To run on specific port, add `-p $(port_name)`.
