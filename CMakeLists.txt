@@ -36,5 +36,5 @@ else()
     message(FATAL_ERROR "Could not find NTL library via manual search.")
 endif()
 
-add_executable(test main.cpp polynomial.cpp clause.cpp clauseRAM.cpp clauseCheck.hpp utils.cpp)
+add_executable(test src/main.cpp src/polynomial.cpp src/clause.cpp src/clauseRAM.cpp src/clauseCheck.hpp src/utils.cpp)
 target_link_libraries(test PUBLIC emp-tool emp-zk OpenSSL::SSL OpenSSL::Crypto NTL::ntl sodium gmp)

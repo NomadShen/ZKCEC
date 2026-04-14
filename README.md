@@ -18,7 +18,7 @@ If you want no optimization, comment out `#define UNFOLD` in `commons.h`. To run
 
 Then run:
 ```
-cmake --B build
+cmake -B build
 cmake --build build
 ```
 
