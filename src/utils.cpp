@@ -1,3 +1,11 @@
+//
+// Created by anonymized on 12/7/21.
+//
+
+
+//
+// Created by anonymized on 8/9/21.
+//
 #include "utils.h"
 #include "commons.h"
 #include "encoder.hpp"
@@ -5,7 +13,7 @@
 
 using namespace  std;
 using  namespace  NTL;
-using namespace emp;
+//using namespace emp;
 
 
 int DEGREE = 4;
@@ -17,10 +25,6 @@ uint64_t constant;
 BoolIO <NetIO> *io;
 Encoder *encoder;
 
-int cnt_svole;
-int cnt_eval;
-
-
 /* Encode literal: the highest bit indicates the sign of that literal;
  * the rest bits indicate the value of the index;
  * for example: x2 is encoded as [1,0, ..., 0, 1, 0] , and not x2 is encoded as [0,0, ..., 0, 1, 0];
@@ -31,6 +35,19 @@ int cnt_eval;
 uint64_t wrap(int64_t input){
     if(ostriple->party == ALICE) {
         return encoder->encode(input);
+        // if(input == 0) {
+        //     return (uint64_t)0;
+        // }
+        // uint64_t  res = 0UL;
+        // if(input >  0) {
+        //     res = (uint64_t) input | constant;
+        //     res = res | 1UL<<(VAL_SZ-1);
+        // }
+        // if(input <  0) {
+        //     res = (uint64_t)(-input);
+        //     res = res | 1UL<<(VAL_SZ-1);
+        // }
+        // return  res;
     } else {
         return (uint64_t)0;
     }
@@ -71,12 +88,18 @@ void pack(block& mac, const Integer& val, int size) {
 void multiply_const(block &val, block &mac,
                            const block& x, const block& m, const block& cst, int party) {
                             
-                     
+    // cout << "=====before ==== \n";
+    // cout << (cst) << endl; 
+    //  cout << (x) << endl;     
+    // cout << (val) << endl;                       
     if(party == ALICE) {
-        gfmul(x, cst, &val);
+        gfmul(x, cst, &val);//   cout << mac << endl;
     }
     gfmul(m, cst, &mac);
-
+    // cout << "====after ===== \n";
+    // cout << (cst) << endl; 
+    // cout << (x) << endl;     
+    // cout << (val) << endl; 
  }
 
 /*
@@ -199,9 +222,17 @@ void block2GF(GF2E& res, const block& a ){
 
 /*
  * conversion from Galois field element to block of size 128
+ @ssr
  * */
 void GF2block(block& res, const GF2E& a) {
+    // GF2X raw = a._GF2E__rep;
+    // res = zero_block; 
+    // for (int i = 0; i < 128; i++) {
+    //     if (IsOne(NTL::coeff(raw, i)))
+    //         res = set_bit(res, i);
+    // }
 
+    //@ssr better version
     const GF2X& raw = a._GF2E__rep;
     NTL::BytesFromGF2X((unsigned char*)&res, raw, 16);
 }
@@ -216,15 +247,14 @@ void inverse(block& inv, block& input){
     block2GF(_input, input );
     if(_input == GF2E(0)) {
         cout << "no inverse!" << endl;
+        error("no inverse!");
         return;
     }
     NTL::inv(_inv, _input);
-
     GF2block(inv, _inv);
 }
 
 void fill_data_and_mac(block& d, block& m){
-    cnt_svole++;
     if (data_mac_pointer == svole->param.n){
         svole->extend_inplace(data, mac, svole->param.n);
         data_mac_pointer = 0;

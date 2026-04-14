@@ -29,6 +29,4 @@ extern uint64_t data_mac_pointer;
 #define PADDING
 //#define UNFOLD
 
-extern int cnt_svole;
-extern int cnt_eval;
 #endif //ZKUNSAT_NEW_COMMONS_H

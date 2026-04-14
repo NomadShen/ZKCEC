@@ -5,7 +5,7 @@
 #include "emp-zk/extensions/ram-zk/ostriple.h"
 #include "clause.h"
 #include "commons.h"
-#define INDEX_SZ 23
+#define INDEX_SZ 24
 typedef vector<uint64_t> clause_raw;
 
 #include "emp-zk/emp-zk.h"
@@ -27,6 +27,7 @@ public:
     int index_sz;
     uint64_t step = 0;
     vector<clause_raw> clear_mem;
+    vector<clause> commitment;//@ssr commitment
     vector<pair<uint64_t, clause_raw>> clear_access_record;
     vector<pair<Integer, clause>> access_record;
     vector<block> hash_block;
@@ -54,15 +55,18 @@ public:
     void init(const vector<clause> &data) {
 
         for(size_t i = 0; i < data.size(); ++i) {
+            //get_raw(val, data[i]);
             clause_raw val(data[i].literals);
             clear_mem.push_back(val);
 
             clear_access_record.push_back(make_pair((uint64_t)i, val));
             access_record.push_back(make_pair(Integer(index_sz + 1,i, ALICE), data[i]));
+            //@ssr new record
+            //prover_record.push_back((uint64_t)i);
         }
     }
 
-    clause get(const Integer & index) {
+    clause get(const Integer & index) {//@ssr only Alice knows index
 
         uint64_t clear_index = index.reveal<uint64_t>(ALICE);
         int degree = DEGREE; 
@@ -78,15 +82,15 @@ public:
         #endif
 
         
-        clause_raw tmp(degree);
+        clause_raw tmp(degree);//@ssr all zero clause
         
         if(party == ALICE) {
-            tmp = clear_mem[clear_index];
+            tmp = clear_mem[clear_index];//@ssr Alice obtain the clause in the ram
         }
-        clause res(tmp);
+        clause res(tmp);//@ssr Bob only gets size of tmp
 
-        clear_access_record.push_back(make_pair(clear_index, tmp));
-        access_record.push_back(make_pair(index, res));
+        clear_access_record.push_back(make_pair(clear_index, tmp));//@ssr store index
+        access_record.push_back(make_pair(index, res));//@ssr store Alice read index
 
         ++step;
         if(step == clear_mem.size() * 2) {
@@ -99,13 +103,13 @@ public:
 
     void check() {
         vector<pair<uint64_t, clause_raw>> sorted_clear_access;
-        sorted_clear_access = clear_access_record;
+        sorted_clear_access = clear_access_record;//@ssr more efficient
 
         clear_access_record.resize(clear_mem.size());
 
         int record_size = access_record.size();
 
-        if(party == ALICE) {
+        if(party == ALICE) {//@ssr for permutation
             sort(sorted_clear_access.begin(), sorted_clear_access.end());
         }
 
@@ -119,8 +123,9 @@ public:
         vector<block> sorted_HRecord_mac;
         vector<Integer> sorted_hash_value;
 
-        for (int i = 0; i < record_size; i ++){
+        for (int i = 0; i < record_size; i ++){//@ssr sorted access 
 
+            // auto item  = sorted_clear_access[i];      
             int degree;      
             #ifdef PADDING
                 degree = DEGREE;
@@ -136,7 +141,12 @@ public:
 
             sorted_index.push_back(Integer(index_sz, sorted_clear_access[i].first, ALICE));
 
-            clause c(sorted_clear_access[i].second);
+            // clause_raw tmp(degree);
+            // if(party == ALICE) {
+            //     tmp = sorted_clear_access[i].second;
+            // }
+
+            clause c(sorted_clear_access[i].second);//@ssr create new clause!
             sorted_clause.push_back(c);
         
         }
@@ -144,13 +154,17 @@ public:
         update_hash();
         sync_zk_bool<IO>();
 
-        for (int i = 0; i < record_size; i ++){
+        for (int i = 0; i < record_size; i ++){//@ssr from access record
             Integer h1 = getHash(access_record[i].second);
             block v1, m1;
             hash_and_mac(v1, m1, access_record[i].first, h1);
             HRecord.emplace_back((__uint128_t)v1);
             HRecord_mac.push_back(m1);
+        //}
 
+
+
+        //for(int i = 0; i < record_size; i++){//@ssr from clear_access_record
             Integer h2 = getHash(sorted_clause[i]);
             sorted_hash_value.push_back(h2);
             block v2, m2;
@@ -168,7 +182,7 @@ public:
         if(!cheat) error("[check] cheat!");
 
         sync_zk_bool<IO>();
-        check_set_euqality(sorted_HRecord, sorted_HRecord_mac, HRecord, HRecord_mac);
+        check_set_euqality(sorted_HRecord, sorted_HRecord_mac, HRecord, HRecord_mac);//@ssr check two records equal
         access_record.resize(clear_mem.size());
         step = 0;
     }
@@ -219,6 +233,7 @@ public:
             gfmul(val, hash_block[i], &tmp);
             hash = hash ^ tmp;
         }
+//        uint64_t  h = _mm_extract_epi64(hash, 0);
         return Integer(128, hash, ALICE);
     }
 
@@ -299,7 +314,7 @@ public:
         }
     }
 
-    void vector_inn_prdt_bch4(block &xx, block &mm,const vector<__uint128_t> &X,const vector<block> &MAC, block r) {
+    void vector_inn_prdt_bch4(block &xx, block &mm,const vector<__uint128_t> &X,const vector<block> &MAC, block r) {//@ssr evaluate at r
         block x[4], m[4], t[4];
         size_t i = 1;
         block tmp = (block)X[0];
@@ -328,9 +343,12 @@ public:
         block r, val[2], mac[2];
         r = io->get_hash_block();
 
-        vector_inn_prdt(val[0], mac[0], sorted_X, sorted_MAC, r);
-        vector_inn_prdt(val[1], mac[1], check_X, check_MAC, r);
+        //cout << "sorted_MAC[0]:" << sorted_MAC[0] << endl;
+        vector_inn_prdt_bch4(val[0], mac[0], sorted_X, sorted_MAC, r);
+        vector_inn_prdt_bch4(val[1], mac[1], check_X, check_MAC, r);
     
+
+        // TODO comparison
         if(party == ALICE) {
             io->send_data(mac, 2*sizeof(block));
             io->flush();
@@ -381,15 +399,15 @@ inline pair<double, double> check_chain(vector<Integer>& indice, vector<uint64_t
     vector<clause> resource;
 
     for (Integer index : indice){
-
+        
         if (index.geq(Integer(INDEX_SZ, ptr, PUBLIC)).reveal())  error("[check_chain] cheat!");
+        //@ssr store tmp
         clause tmp = formula->get(index);
         
-        resource.push_back(tmp);
+        resource.push_back(tmp);//@ssr get two antecedent clauses
 
     }
 
-    clause end_clause = formula -> get(Integer(INDEX_SZ, ptr, PUBLIC));
     auto timer_1 = chrono::high_resolution_clock::now();
 
     cost_access = chrono::duration<double>(timer_1 - timer_0).count();
@@ -398,17 +416,24 @@ inline pair<double, double> check_chain(vector<Integer>& indice, vector<uint64_t
     auto timer_2 = chrono::high_resolution_clock::now();
 
     intermediate.push_back(resource[0]);
+
+    //@ssr pivots.size() always equals 2
+    //@ssr pivots: [0, pivot]
+
+    //@ssr fetch a clause
+    clause end_clause = formula -> get(Integer(INDEX_SZ, ptr, PUBLIC));//@ssr checks tmp = end_clause
+    
     #ifdef UNFOLD
     clause c0 = resource[0];
 
     clause c1 = resource[1];
-    check_xres(c0, c1, end_clause, pivots[1]);
+    check_xres(c0, c1, end_clause, pivots[1]);//@ssr checks tmp
     #else
 
     for (int i = 1; i < pivots.size(); i++){
-        clause a = intermediate[i-1];
+        clause a = intermediate[i-1];//@ssr resource[0]
         clause b = resource[i];
-        clause tmp = get_res_f2k(a, b, pivots[i]);
+        clause tmp = get_res_f2k(a, b, pivots[i]);//@ssr generate tmp
         intermediate.push_back(tmp);
     }
 
@@ -419,7 +444,7 @@ inline pair<double, double> check_chain(vector<Integer>& indice, vector<uint64_t
 
         clause c1 = resource[i];
 
-        check_xres(c0, c1, intermediate[i], pivots[i]);
+        check_xres(c0, c1, intermediate[i], pivots[i]);//@ssr checks tmp
 
     }
     
@@ -430,7 +455,7 @@ inline pair<double, double> check_chain(vector<Integer>& indice, vector<uint64_t
     
     if (last_clause) {
         vector <uint64_t> empty_literals;
-        empty_literals.push_back(0UL);
+        empty_literals.push_back(0UL);// @ssr padding
         clause empty_clause(empty_literals);
         end_clause.poly.Equal(empty_clause.poly);
     }
@@ -439,15 +464,5 @@ inline pair<double, double> check_chain(vector<Integer>& indice, vector<uint64_t
     return pair<double, double>{cost_access, cost_resolve};
 
 }
-
-/**************************checking*************************************************/
-
-/**************************bottleneck*************************************************/
-
-
-
-
-
-
 
 #endif //ZKUNSAT_NEW_CLAUSERAM_H

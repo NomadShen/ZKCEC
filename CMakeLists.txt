@@ -10,6 +10,8 @@ set(CMAKE_CXX_FLAGS "-march=native -flto -O3 -pthread -w ")
 
 set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE)
 
+set(SOURCES src/main.cpp src/polynomial.cpp src/clause.cpp src/clauseRAM.cpp src/clauseCheck.hpp src/utils.cpp)
+
 find_package(emp-tool REQUIRED)
 include_directories(${EMP-TOOL_INCLUDE_DIRS})
 find_package(emp-ot REQUIRED)
@@ -36,5 +38,9 @@ else()
     message(FATAL_ERROR "Could not find NTL library via manual search.")
 endif()
 
-add_executable(test src/main.cpp src/polynomial.cpp src/clause.cpp src/clauseRAM.cpp src/clauseCheck.hpp src/utils.cpp)
-target_link_libraries(test PUBLIC emp-tool emp-zk OpenSSL::SSL OpenSSL::Crypto NTL::ntl sodium gmp)
+add_executable(zkcec ${SOURCES})
+target_link_libraries(zkcec PRIVATE emp-tool emp-zk OpenSSL::SSL OpenSSL::Crypto NTL::ntl sodium gmp)
+target_compile_definitions(zkcec PRIVATE UNFOLD)
+
+add_executable(zkcec_opt ${SOURCES})
+target_link_libraries(zkcec_opt PRIVATE emp-tool emp-zk OpenSSL::SSL OpenSSL::Crypto NTL::ntl sodium gmp)

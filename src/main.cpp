@@ -10,6 +10,9 @@ using namespace NTL;
 extern Encoder *encoder;
 
 int main(int argc, char **argv) {
+    #ifndef UNFOLD
+        cout << "Optimized version!" << endl;
+    #endif
     int port, party;
     const int threads = 8;
     cout << "---- begin ----" << endl;

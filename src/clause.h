@@ -1,3 +1,7 @@
+//
+// Created by anonymized on 12/7/21.
+//
+
 #ifndef ZKUNSAT_NEW_CLAUSE_H
 #define ZKUNSAT_NEW_CLAUSE_H
 
@@ -5,7 +9,6 @@
 
 extern int party;
 extern Encoder *encoder;
-
 
 inline uint64_t  get_negate(uint64_t encode){
     if (encode == 0) return encode;
@@ -32,6 +35,11 @@ public:
         for(int i = 0; i < this->literals.size(); i ++){
             lts.push_back(Integer(VAL_SZ, literals[i], ALICE));
         }
+    }
+
+    void get_lits(vector<uint64_t>& lts) const{
+        assert(lts.size() == 0);
+        lts = this->literals;
     }
 
     void print() const{
@@ -93,7 +101,7 @@ inline void check_xres(clause& c0, clause& c1, clause& cres, uint64_t pivot) {
 }
 
 
-inline clause get_res_f2k(const clause& a,  const clause& b, uint64_t pivot){
+inline clause get_res_f2k(const clause& a,  const clause& b, uint64_t pivot){//@ssr add party
     uint64_t  npivot  = get_negate(pivot);
 
     std::vector<uint64_t> altr = a.literals;
@@ -126,10 +134,12 @@ inline clause get_res_f2k(const clause& a,  const clause& b, uint64_t pivot){
         cout <<"overflow error!" << endl;
     }
 
+    //@ssr edit padding
     #ifdef PADDING
         padding(res_raw);
         assert(res_raw.size() == DEGREE);
     #else
+        /* @ssr here the prover tell the verifier the size of resolvent*/
         int degree;
         if(party == ALICE) {
             degree = res_raw.size(); 
