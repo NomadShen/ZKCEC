@@ -1,0 +1,3 @@
+[submodule "CNF-GEN"]
+	path = CNF-GEN
+	url = https://github.com/NomadShen/CNF-GEN.git

@@ -35,7 +35,11 @@ Your can download the full benchmark for the experiments from our Google drive.
 + [Original Designs](https://drive.google.com/file/d/1umyJBWoxnXRAWMBeO5RZvsaq1vrz-Rtx/view?usp=sharing)
 
 
-If you want test your own design, generate the refutation proof and infomation file using our [CNF-GEN](https://github.com/NomadShen/CNF-GEN), and copy `*.sorted.unfold`, `*.sorted`, and `*.info` to `./input`.
+If you want test your own design, generate the refutation proof and infomation file using our [CNF-GEN](https://github.com/NomadShen/CNF-GEN). You can run:
+```bash
+git submodule update --init --recursive
+```
+Follow the README and copy `*.sorted.unfold`, `*.sorted`, and `*.info` to `./input`.
 
 ## Build Locally
 
