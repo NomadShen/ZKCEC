@@ -10,8 +10,6 @@ docker pull ufsirv/zkcec_image:v1
 ```
 
 ### Running the Evaluation
-> We provide the two design in repo: adder_2x2 and mult_4x4.
-
 Runs the default benchmark on the 2-bit adder.
 ```bash
 docker run -it zkcec_image
@@ -26,15 +24,7 @@ docker run -it -e "-o -d mult_4x4" zkcec_image
 + To run with alternative design, add `-d $(design_name)`.
 + To run on specific port, add `-p $(port_name)`.
 
-### Other Benchmarks and Own Input file
-If you want to evaluate our full benchmarks, copy `*.sorted.unfold`, `*.sorted`, and `*.info` to `input/`.
-
-#### Get our Full Benchmark
-Your can download the full benchmark for the experiments from our Google drive.
-+ [Input files](https://drive.google.com/file/d/1xrdbtG711CYpuRMJG6Ae-Jm-SO6NLjy2/view?usp=sharing)
-+ [Original Designs](https://drive.google.com/file/d/1umyJBWoxnXRAWMBeO5RZvsaq1vrz-Rtx/view?usp=sharing)
-
-
+### Own Input file
 If you want test your own design, generate the refutation proof and infomation file using our [CNF-GEN](https://github.com/NomadShen/CNF-GEN). You can run:
 ```bash
 git submodule update --init --recursive
@@ -78,6 +68,12 @@ bash run_experiments.sh -d mult_4x4 -o
 ```bash
 bash run_experiments.sh -d sbox_aes -p 1500
 ```
+
+#### Get our Full Benchmark
+
+- You can unzip the `full_benchmark.zip` to get the full benchmark.
+- You can download the design file of the full benchmark for the experiments from our Google drive.
+    + [Original Designs](https://drive.google.com/file/d/1umyJBWoxnXRAWMBeO5RZvsaq1vrz-Rtx/view?usp=sharing)
 
 ## License
 
