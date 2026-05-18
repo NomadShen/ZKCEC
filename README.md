@@ -3,7 +3,7 @@
 ## Requirement
 - **OS:** Linux (Recommended), macOS, or Windows (WSL2).
 
-## Use the Pre-built Image (Recommended)
+## Use the Pre-built Docker Image (Recommended)
 ### Pull the Image
 ```bash
 docker pull ufsirv/zkcec_image:v1
@@ -26,8 +26,8 @@ docker run -it -e "-o -d mult_4x4" zkcec_image
 + To run with alternative design, add `-d $(design_name)`.
 + To run on specific port, add `-p $(port_name)`.
 
-### Benchmarks and Own Input file
-If you want to evaluate other benchmarks, copy `*.sorted.unfold`, `*.sorted`, and `*.info` to `zkcec/input`.
+### Other Benchmarks and Own Input file
+If you want to evaluate our full benchmarks, copy `*.sorted.unfold`, `*.sorted`, and `*.info` to `input/`.
 
 #### Get our Full Benchmark
 Your can download the full benchmark for the experiments from our Google drive.
@@ -65,6 +65,10 @@ Then runs the script:
 bash run_experiment.sh
 ```
 
++ To run with optimization, add `-o`.
++ To run with alternative design, add `-d $(design_name)`.
++ To run on specific port, add `-p $(port_name)`.
+
 ### Example
 1. Evaluate 4-bit multiplers with optimization:
 ```bash
@@ -74,3 +78,8 @@ bash run_experiments.sh -d mult_4x4 -o
 ```bash
 bash run_experiments.sh -d sbox_aes -p 1500
 ```
+
+## License
+
+This project is licensed under the MIT License.
+See the LICENSE file for details.
