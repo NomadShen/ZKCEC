@@ -12,7 +12,7 @@ extern Encoder *encoder;
 
 inline uint64_t  get_negate(uint64_t encode){
     if (encode == 0) return encode;
-    return constant^encode;
+    return constant_lit^encode;
 }
 
 

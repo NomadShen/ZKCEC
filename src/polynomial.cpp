@@ -127,7 +127,7 @@ void polynomial::ConverseCheck(polynomial & lhs) {
 
     io->flush();
     block r =io->get_hash_block();
-    block converse_r = ((block) get_128uint_from_uint64(constant))^r;
+    block converse_r = ((block) get_128uint_from_uint64(constant_lit))^r;
     block xx, xm, yy, ym;
     this->Evaluate(xx, xm, r);
     lhs.Evaluate(yy, ym, converse_r);

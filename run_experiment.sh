@@ -7,7 +7,7 @@ mkdir -p data
 
 USE_OPT=false
 
-DESIGN="adder_2x2"
+DESIGN="mult_4x4"
 PORT=1234
 
 while [[ $# -gt 0 ]]; do

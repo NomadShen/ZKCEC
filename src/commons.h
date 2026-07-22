@@ -13,7 +13,8 @@ extern int DEGREE;
 extern SVoleF2k<BoolIO<NetIO>> *svole;
 extern F2kOSTriple<BoolIO<NetIO>>* ostriple;
 extern BoolIO<NetIO>* io;
-extern uint64_t constant;
+extern uint64_t constant_lit;
+extern uint64_t constant_pub;
 extern block *data;
 extern block *mac;
 extern uint64_t data_mac_pointer;
@@ -24,7 +25,8 @@ extern uint64_t data_mac_pointer;
 #define VAL_SZ 64
 #define MSB_MASK  (1UL << (VAL_SZ - 1))
 #define SMSB_MASK (1UL << (VAL_SZ - 2))
-#define CONSTANT SMSB_MASK
+#define CONSTANT_PUB MSB_MASK
+#define CONSTANT_LIT SMSB_MASK
 
 #define PADDING
 //#define UNFOLD

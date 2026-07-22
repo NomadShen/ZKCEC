@@ -21,7 +21,8 @@ block *mac, *data;
 uint64_t data_mac_pointer;
 SVoleF2k <BoolIO<NetIO>> *svole;
 F2kOSTriple <BoolIO<NetIO>> *ostriple;
-uint64_t constant;
+uint64_t constant_lit;
+uint64_t constant_pub;
 BoolIO <NetIO> *io;
 Encoder *encoder;
 
@@ -35,19 +36,6 @@ Encoder *encoder;
 uint64_t wrap(int64_t input){
     if(ostriple->party == ALICE) {
         return encoder->encode(input);
-        // if(input == 0) {
-        //     return (uint64_t)0;
-        // }
-        // uint64_t  res = 0UL;
-        // if(input >  0) {
-        //     res = (uint64_t) input | constant;
-        //     res = res | 1UL<<(VAL_SZ-1);
-        // }
-        // if(input <  0) {
-        //     res = (uint64_t)(-input);
-        //     res = res | 1UL<<(VAL_SZ-1);
-        // }
-        // return  res;
     } else {
         return (uint64_t)0;
     }
@@ -270,17 +258,17 @@ GF2EX get_GF2EX_with_roots(vector<uint64_t>& roots){
     SetCoeff(res, 0); // res = 1
     for (const auto& r : roots){
         tmp = GF2EX();
-        GF2E coefficient, constant;
+        GF2E coeff_0, coeff_1;
         if (r == 0){
-            block2GF(coefficient, zero_block);
-            block2GF(constant, one_block);
-            SetCoeff(tmp, 0, constant);
-            SetCoeff(tmp, 1, coefficient);
+            block2GF(coeff_1, zero_block);
+            block2GF(coeff_0, one_block);
+            SetCoeff(tmp, 0, coeff_0);
+            SetCoeff(tmp, 1, coeff_1);
         }else{
-            block2GF(constant, (block)get_128uint_from_uint64(r));
-            block2GF(coefficient, one_block);
-            SetCoeff(tmp, 0, constant);
-            SetCoeff(tmp, 1, coefficient);
+            block2GF(coeff_0, (block)get_128uint_from_uint64(r));
+            block2GF(coeff_1, one_block);
+            SetCoeff(tmp, 0, coeff_0);
+            SetCoeff(tmp, 1, coeff_1);
         }
         res = tmp * res;
     }

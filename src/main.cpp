@@ -16,7 +16,8 @@ int main(int argc, char **argv) {
     int port, party;
     const int threads = 8;
     cout << "---- begin ----" << endl;
-    constant = CONSTANT;
+    constant_lit = CONSTANT_LIT;
+    constant_pub = CONSTANT_PUB;
     parse_party_and_port(argv, &party, &port);
     BoolIO <NetIO> *ios[threads];
     cout << party << endl;

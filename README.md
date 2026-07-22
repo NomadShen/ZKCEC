@@ -6,7 +6,7 @@
 ## Use the Pre-built Docker Image (Recommended)
 ### Pull the Image
 ```bash
-docker pull ufsirv/zkcec_image:v1
+docker pull ufsirv/zkcec:v1
 ```
 
 ### Running the Evaluation
@@ -74,6 +74,35 @@ bash run_experiments.sh -d sbox_aes -p 1500
 - You can unzip the `full_benchmark.zip` to get the full benchmark.
 - You can download the design file of the full benchmark for the experiments from our Google drive.
     + [Original Designs](https://drive.google.com/file/d/1umyJBWoxnXRAWMBeO5RZvsaq1vrz-Rtx/view?usp=sharing)
+
+## Reproduce the Evaluation
+
+### Requirements
+- python3
+    - atplotlib
+    - Pandas
+    - CSV
+
+### Running the Experiments
+First, get the full benchmark:
+```bash
+unzip -o full_benchmark.zip -d input 
+```
+and check the designs in `input/design.f`. You can exclude the evaluation of some designs by removing them from the filelist. 
+
+(Note that the evaluation of `mult_6x6`, `gfmul_8x8`, `sbox_aes`, and `sbox_sm4` could take hours on different devices.)
+
+Then run our one-for-all script.
+```bash
+bash ./run_all.sh
+```
+After the evaluation completes, you can check the evaluation logs in `res/non_opt` and `res/opt`, repectively.
+
+The table of evaluation results (Table. 2) is output as `res/result.csv`.
+
+The performance comparison charts (Fig. 13) are output in `performance_plot.pdf`.
+
+
 
 ## License
 

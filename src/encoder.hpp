@@ -57,7 +57,7 @@ public:
 
         for(int i = secret_start_; i <= secret_end_; i ++){
                 uint64_t hash = compute_hash(i);
-                uint64_t hash_neg = hash ^ CONSTANT;
+                uint64_t hash_neg = hash ^ CONSTANT_LIT;
             forward_map_[i] = hash;
             forward_map_[-i] = hash_neg;
             reverse_map_[hash] = i;
@@ -76,7 +76,7 @@ public:
 
             for(int i = secret_start_; i <= secret_end_; i ++){
                 uint64_t hash = compute_hash(i);
-                uint64_t hash_neg = hash ^ CONSTANT;
+                uint64_t hash_neg = hash ^ CONSTANT_LIT;
                 forward_map_[i] = hash;
                 forward_map_[-i] = hash_neg;
                 reverse_map_[hash] = i;
@@ -95,8 +95,8 @@ public:
         if(secret_range_check(val)) {//in secret range, use keyed hash encoding
             return forward_map_[val];
         } else {
-            if(val > 0) return (uint64_t) val | MSB_MASK;
-            if(val < 0) return (uint64_t) (-val | SMSB_MASK) | MSB_MASK;
+            if(val > 0) return (uint64_t) val | CONSTANT_PUB;
+            if(val < 0) return (uint64_t) (-val | CONSTANT_LIT) | CONSTANT_PUB;
         }
     }
 
