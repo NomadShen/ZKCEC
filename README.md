@@ -6,7 +6,7 @@
 ## Use the Pre-built Docker Image (Recommended)
 ### Pull the Image
 ```bash
-docker pull ufsirv/zkcec:latest
+docker pull ufsirv/zkcec:v2
 ```
 
 ### Running the Evaluation
