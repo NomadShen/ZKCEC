@@ -38,7 +38,7 @@ First, unzip the full benchmark:
 ```bash
 unzip -o full_benchmark.zip -d input 
 ```
-and check the designs in `input/design.f`. You can exclude the evaluation of some designs by removing them from the filelist. 
+and check the designs in `input/design.f`. All listed designs in `design.f` will be evaluated later on. You can exclude the evaluation of some designs by removing them from this filelist. 
 
 (Note that the evaluation of `mult_6x6`, `gfmul_8x8`, `sbox_aes`, and `sbox_sm4` could take hours.)
 
