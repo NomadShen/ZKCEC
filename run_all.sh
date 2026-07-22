@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 set -u
+
+mkdir -p res
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 DESIGN_FILE="${SCRIPT_DIR}/input/design.f"
 RESULT_DIR="${SCRIPT_DIR}/res"

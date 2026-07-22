@@ -1,5 +1,8 @@
 build/
 .vscode/
 .DS_Store
-res/*
+res/opt
+res/non_opt
+res/result.csv
+res/performance_plot.pdf
 .venv
